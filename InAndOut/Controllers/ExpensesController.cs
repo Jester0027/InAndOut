@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace InAndOut.Controllers
 {
-    [Route("/appointments")]
-    public class AppointmentController : Controller
+    public class ExpensesController : Controller
     {
         public IActionResult Index()
         {

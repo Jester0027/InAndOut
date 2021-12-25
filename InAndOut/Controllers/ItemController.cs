@@ -22,5 +22,21 @@ namespace InAndOut.Controllers
             IEnumerable<Item> items = _dbContext.Items;
             return View(items);
         }
+
+        [HttpGet("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost("create")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Item item)
+        {
+            _dbContext.Items.Add(item);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
