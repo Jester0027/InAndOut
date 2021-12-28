@@ -18,13 +18,17 @@ namespace InAndOut.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
+            _logger.LogInformation("Index page");
             return View();
         }
 
+        [HttpGet("privacy")]
         public IActionResult Privacy()
         {
+            _logger.LogInformation("Privacy Page page");
             return View();
         }
 
